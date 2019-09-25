@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ELMA.BirthdayTerminal"
+             x:Class="ELMA.BirthdayTerminal.TerminalMenuPage">
+
+    <StackLayout VerticalOptions="Center" Padding="10">
+        <Label FontSize="Large" FontAttributes="Bold" Margin="20,10,0,10">Дни рождения сегодня</Label>
+        <ListView x:Name="todayEvents" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="OnEventSelect" Height="100">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" />
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" FontSize="Large" />
+                                <Label Text="{Binding Date, StringFormat='{0:d MMMM}'}" FontSize="Medium"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label FontSize="Large" FontAttributes="Bold" Margin="20,0,0,10">Ближайшие дни рождения</Label>
+        <ListView x:Name="nextEvents" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="OnEventSelect" Height="100">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" />
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" FontSize="Large" />
+                                <Label Text="{Binding Date, StringFormat='{0:d MMMM}'}" FontSize="Medium"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+</ContentPage>

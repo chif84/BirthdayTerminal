@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ELMA.BirthdayTerminal"
+             xmlns:localView="clr-namespace:ELMA.BirthdayTerminal.Views"
+             xmlns:renderers="clr-namespace:ELMA.BirthdayTerminal.Renderers"
+             x:Class="ELMA.BirthdayTerminal.TakePicturePage">
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout x:Name="layoutCamera" Padding="20" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+            <renderers:CameraView x:Name="viewCamera"
+                Camera="Front"
+		        HeightRequest="580"
+                WidthRequest="1240"
+            />
+        </StackLayout>
+        
+        <StackLayout x:Name="layoutPhoto" Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False">
+            <Image x:Name="viewPhoto" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+        <StackLayout MinimumWidthRequest="100" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button x:Name="btnCancel" Text="Вернуться" Clicked="OnButtonCancelClicked" MinimumHeightRequest="50" HeightRequest="100" MinimumWidthRequest="200" WidthRequest="200"></Button>
+            <Button x:Name="btnTake" Text="Сделать снимок" Clicked="OnButtonTakeClicked" MinimumHeightRequest="50" HeightRequest="100" MinimumWidthRequest="200" WidthRequest="200"></Button>
+            <Button x:Name="btnText" Text="Добавить текст" Clicked="OnButtonTextClicked" MinimumHeightRequest="50" HeightRequest="100" MinimumWidthRequest="200" WidthRequest="200" IsEnabled="false"></Button>
+            <Button x:Name="btnNext" Text="Отправить поздравление" Clicked="OnButtonNextClicked" MinimumHeightRequest="50" HeightRequest="100" MinimumWidthRequest="200" WidthRequest="200" IsEnabled="false"></Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
